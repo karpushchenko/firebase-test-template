@@ -15,7 +15,7 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 
 import * as ROUTES from '../../constants/routes';
-import { withFirebase } from '../Firebase';
+import { withAuthentication } from '../Session';
 
 class App extends Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Navigation authUser={this.state.authUser} />
+          <Navigation />
 
           <hr />
           <Routes>
@@ -61,4 +61,4 @@ class App extends Component {
   }
 }
 
-export default withFirebase(App);
+export default withAuthentication(App);
